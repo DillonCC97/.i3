@@ -39,6 +39,7 @@ gaps inner 10
 gaps outer 0
 
 exec --no-startup-id nitrogen --restore
+exec udiskie -2 -a -n -T -f thunar
 #exec xfce4-terminal --hide-menubar
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
@@ -94,9 +95,9 @@ bindsym Mod1+v split v
 bindsym Mod1+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
+# bindsym Mod1+s layout stacking
+# bindsym Mod1+w layout tabbed
+# bindsym Mod1+e layout toggle split
 
 # toggle tiling / floating
 bindsym Mod1+Shift+space floating toggle
@@ -122,6 +123,11 @@ set $workspace2 "II"
 set $workspace3 "III"
 set $workspace4 "IV"
 set $workspace5 "V"
+set $workspace6 "VI"
+set $workspace7 "VII"
+set $workspace8 "VIII"
+set $workspace9 "IX"
+set $workspace0 "X"
 
 # switch to workspace
 bindsym Mod1+1 workspace $workspace1
@@ -129,11 +135,11 @@ bindsym Mod1+2 workspace $workspace2
 bindsym Mod1+3 workspace $workspace3
 bindsym Mod1+4 workspace $workspace4
 bindsym Mod1+5 workspace $workspace5
-bindsym Mod1+6 workspace 6
-bindsym Mod1+7 workspace 7
-bindsym Mod1+8 workspace 8
-bindsym Mod1+9 workspace 9
-bindsym Mod1+0 workspace 10
+bindsym Mod1+6 workspace $workspace6
+bindsym Mod1+7 workspace $workspace7
+bindsym Mod1+8 workspace $workspace8
+bindsym Mod1+9 workspace $workspace9
+bindsym Mod1+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym Mod1+Shift+1 move container to workspace I
@@ -197,7 +203,7 @@ bar {
         status_command i3status -c ~/.i3/i3status.conf
         #status_command i3blocks -c ~/.i3/i3blocks.conf
 position top
-tray_output none
+tray_output none # hide tray icons
         colors {
               separator $base03
               background $base01
@@ -211,6 +217,7 @@ tray_output none
 }
 exec_always compton -fCG
 exec --no-startup-id redshift-gtk
+exec mpd
 
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
