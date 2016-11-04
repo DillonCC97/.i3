@@ -147,11 +147,11 @@ bindsym Mod1+Shift+2 move container to workspace II
 bindsym Mod1+Shift+3 move container to workspace III
 bindsym Mod1+Shift+4 move container to workspace IV
 bindsym Mod1+Shift+5 move container to workspace V
-bindsym Mod1+Shift+6 move container to workspace 6
-bindsym Mod1+Shift+7 move container to workspace 7
-bindsym Mod1+Shift+8 move container to workspace 8
-bindsym Mod1+Shift+9 move container to workspace 9
-bindsym Mod1+Shift+0 move container to workspace 10
+bindsym Mod1+Shift+6 move container to workspace VI
+bindsym Mod1+Shift+7 move container to workspace VII
+bindsym Mod1+Shift+8 move container to workspace VIII
+bindsym Mod1+Shift+9 move container to workspace IX
+bindsym Mod1+Shift+0 move container to workspace X
 
 
 # reload the configuration file
@@ -203,7 +203,7 @@ bar {
         status_command i3status -c ~/.i3/i3status.conf
         #status_command i3blocks -c ~/.i3/i3blocks.conf
 position top
-tray_output none # hide tray icons
+tray_output primary # hide tray icons
         colors {
               separator $base03
               background $base01
